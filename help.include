@@ -1,0 +1,55 @@
+#!/bin/bash
+
+##############################################################################
+# FILE: help.include                                                         #
+##############################################################################
+
+#
+# HELP
+#
+if [[ $1 == "--help" || $1 == "-help" || $1 == "help" || $1 == "-h" || $1 == "about" || $1 == "--about" || $1 == "-about" ]]
+then
+  echo "
+  ###############################################################
+  CODEXium
+  ###############################################################
+  
+  This script will perform the initial install of CODEXium.
+  This script requires elevated priviledges.
+  You can run this script with user \"root\" or with \"sudo\".
+  You should have a user account that has elevated priviledges
+  and is also in group \"apache\".
+  e.g.
+    # id yourself
+    uid=1000(yourself) gid=48(apache) groups=48(apache),10(wheel)
+  
+  This script will install optional AddOn's.
+  AddOn's have their own install script.
+  e.g.
+    /www/codexium-addon/AddOn-Theme-Planets
+  
+  This script will configure an Apache/httpd web server.
+  You will stop/start with ...
+  
+    # systemctl start httpd
+    # systemctl stop httpd
+  
+  CODEXium does not use DBMS's ... it is file based.
+  There are no database services to manage.
+  
+  This script can change the server site/domain name.
+  It calls \"change_site_name.sh\", which you can run separately
+  and at any time (you may need to change DNS).
+  
+  TIP:
+  Using a priviledged user account (with :wheel and :apache)
+  you may want to setup ssh keys to upload files that would be
+  tedious to upload one at a time.
+   
+  ###############################################################
+  CODEXium
+  ###############################################################
+
+  "
+  exit
+fi

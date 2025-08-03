@@ -1,0 +1,113 @@
+#!/bin/bash
+
+#############################################################################
+### FILE: display_functions.include                                       ###
+#############################################################################
+
+
+function DisplayLineStart
+{
+  # local -i spin_seconds=3
+  local -i len
+  local -i rem
+  local -i i=1
+  # local -i j=1
+  # simple math calculations
+  (( len = $(echo $@ | wc -c) - 1 ))
+  WIDTH=$(tput cols) # Get width of display
+  (( rem = WIDTH - 4 - len ))
+  echo -n "$@ "
+  # print dots
+  while (( i <= rem ))
+  do
+    echo -n "."
+    (( i++ ))
+  done
+  # print spinner
+  #while (( j < $spin_seconds ))
+  #do
+    echo -n -e "\b|"
+    sleep 0.15
+    echo -n -e "\b/"
+    sleep 0.15
+    echo -n -e "\b-"
+    sleep 0.15
+    echo -n -e "\b\\"
+    sleep 0.15
+    echo -n -e "\b|"
+  #  (( j++ ))
+  #done
+}
+
+function DisplayLineStartFast
+{
+  local -i len
+  local -i rem
+  local -i i=1
+  # simple math calculations
+  (( len = $(echo $@ | wc -c) - 1 ))
+  WIDTH=$(tput cols) # Get width of display
+  (( rem = WIDTH - 4 - len ))
+  echo -n "$@ "
+  # print dots
+  while (( i <= rem ))
+  do
+    echo -n "."
+    (( i++ ))
+  done
+}
+
+function DisplayLineEnd
+{
+  echo -e "\b\b\b\b\b\b[DONE]"
+}
+
+function DisplayBlockFill
+{
+  local -i len
+  local -i rem
+  local -i i=1
+  # simple math calculations
+  (( len = $(echo $@ | wc -c) - 1 ))
+  WIDTH=$(tput cols) # Get width of display
+  (( rem = WIDTH - 2 - len ))
+  #echo -n "$@ "
+  # print dots
+  while (( i <= rem - 1 ))
+  do
+    echo -n "#"
+    (( i++ ))
+  done
+  echo ""
+}
+
+function DisplayBlockLine
+{
+  local -i len
+  local -i rem
+  local -i i=1
+  # simple math calculations
+  (( len = $(echo $@ | wc -c) - 1 ))
+  WIDTH=$(tput cols) # Get width of display
+  (( rem = WIDTH - 3 - len ))
+  echo -n "# "
+  echo -n "$@ "
+  # print dots
+  while (( i <= rem - 4 ))
+  do
+    echo -n " "
+    (( i++ ))
+  done
+  echo "#"
+}
+
+
+function DisplaySection
+{
+  DisplayBlockFill 
+  DisplayBlockLine $@
+  DisplayBlockFill
+}
+
+
+
