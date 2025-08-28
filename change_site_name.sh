@@ -13,7 +13,7 @@
 DEBUG=0
 DATE=$(date +Y%Y.M%m.D%d.h%H.m%M)
 BASE="/www"
-CDX_DIR="${BASE}/codexium"
+CORE="${BASE}/CDX-CORE"
 THIS_DIR=$(dirname $0)
 
 source ${THIS_DIR}/display_functions.include

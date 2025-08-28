@@ -1,0 +1,23 @@
+#!/bin/bash
+
+##############################################################################
+# FILE: packages.include.rpm                                                 #
+##############################################################################
+
+#
+# System Packages
+#
+OS_Packages_RPM=(
+  "git"
+  "httpd" 
+  "mod_ssl"
+  "mod_session"
+  "perl"
+  "perl-CGI"
+  "perl-Inline-Files"
+  "perl-CPAN"
+  "epel-release" # For "rcs"
+  "rcs"
+  "lm_sensors" 
+)
+
