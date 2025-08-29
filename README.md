@@ -11,7 +11,7 @@ If you have purchased the software, you should have a license key.
 * Copy your license key, as root, to ~/.ssh/ . 
 * Copy the license key to the target file name .
 * Change the mode to read-only on the original license key .  
-  (You should now have a backup key.)
+  (You now have a backup key.)
 * Change the mode to read-only on the target file name .
 
 OR, you can just copy the following and run it.
