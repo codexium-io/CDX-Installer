@@ -11,7 +11,9 @@ If you have purchased the software, you should have a license key.
 Copy your license key, as root, to ~/.ssh/CODEXium-CORE.key.
 
 ```
-cp CODEXium-DeployKey-2025-Q4.key ~/.ssh/ && chmod 400 ~/.ssh/CODEXium-DeployKey-2025-Q4.key
+cp CODEXium-DeployKey-2025-Q4.key ~/.ssh/ ;
+cp ~/.ssh/CODEXium-DeployKey-2025-Q4.key ~/.ssh/CODEXium-CORE.key ;
+chmod 400 ~/.ssh/CODEXium-CORE.key
 ```
 
 
