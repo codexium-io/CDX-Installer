@@ -24,4 +24,10 @@ chmod 400 ~/.ssh/CODEXium-.DeployKey-2025-Q4.key
 chmod 400 ~/.ssh/CODEXium-CORE.key
 ```
 
+To get this CDX-Installer software ...
+
+```
+git clone https://github.com/codexium-io/CDX-Installer.git
+```
+
 
