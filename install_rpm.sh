@@ -193,8 +193,7 @@ else
     #
     git config --global safe.directory ${CORE}
     git config --global core.fileMode true
-    git config --global core.sshCommand 'ssh -i ~/.ssh/CODEXium-CORE.key'
-    git config --global core.sshCommand 'ssh -o StrictHostKeyChecking=no'
+    git config --global core.sshCommand 'ssh -i ~/.ssh/CODEXium-CORE.key -o StrictHostKeyChecking=no'
     #git clone -c "core.sshCommand=ssh -i ~/.ssh/CODEXium-CORE.key" git@github.com:codexium-io/CDX-CORE.git ${CORE}
     git clone git@github.com:codexium-io/CDX-CORE.git ${CORE}
     if (( $? ))
