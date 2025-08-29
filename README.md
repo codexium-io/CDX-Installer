@@ -10,7 +10,7 @@ git clone https://github.com/codexium-io/CDX-Installer.git
 
 If you have purchased the software, you should have a license key.
 
-* Copy your license key, as root, to ~/.ssh/ . 
+* Copy your license key, as root, to your host "MyCoolServer:~/.ssh/" . 
 * Copy the license key to the target file name .
 * Change the mode to read-only on the original license key .  
   (You now have a backup key.)
@@ -20,7 +20,7 @@ OR, you can just copy the following and run it.
 
 e.g.
 ```
-cp CODEXium-CORE-DeployKey-2025-Q4.key ~/.ssh/ ;
+scp CODEXium-CORE-DeployKey-2025-Q4.key MyCoolServer:~/.ssh/ ;
 cp ~/.ssh/CODEXium-CORE-DeployKey-2025-Q4.key ~/.ssh/CODEXium-CORE.key ;
 chmod 400 ~/.ssh/CODEXium-CORE-DeployKey-2025-Q4.key ;
 chmod 400 ~/.ssh/CODEXium-CORE.key ;
