@@ -18,12 +18,14 @@ DATE=$(date +Y%Y.M%m.D%d.h%H.m%M)
 
 BASE="/www"
 CORE="${BASE}/CDX-CORE" 
-#OLD-KEEP# EXTRAS="${BASE}/CDX-ADDON" 
-#OLD-KEEP# PROD="${BASE}/codexium" # Not using "codexium" anymore ... prefering direct install of repo.
-                                   # This is for easier upgrading of "git pull".
+
+(( OPTION_WSL = 0 )) 
+(( OPTION_HTTP = 0 ))
+(( OPTION_HTTPS = 0 ))
 
 THIS_DIR=$(dirname $0)
 
+#OLD-KEEP# EXTRAS="${BASE}/CDX-ADDON" 
 #OLD-KEEP# ADDON=(
 #OLD-KEEP#   "CDX-AddOn-Theme-Planets"
 #OLD-KEEP#   "CDX-AddOn-Background-Space"
@@ -337,10 +339,12 @@ else
       cp ${CORE}/etc_httpd_certs__sts_ssl.crt /etc/httpd/certs/demo_cdx_wiki_ssl.crt
       cp ${CORE}/etc_httpd_certs__sts_ssl.key /etc/httpd/certs/demo_cdx_wiki_ssl.key
       DisplayLineEnd
+      echo ""
     fi
   elif [[ ${ANSWER} == "1" || ${ANSWER} == "2" ]]
   then
     # HOST:80 OR WSL:80
+    (( OPTION_WSL = 1 ))
     echo -n "Do you want to copy the website config \"codexium_80.conf\" ? [y]/n : "
     read ANSWER
     if [[ ${ANSWER} == "n" ]]
@@ -361,6 +365,7 @@ else
     #
     # WSL Configuration
     #
+    (( OPTION_WSL = 1 ))
     echo ""
     DisplaySection "WSL Setup"
     echo ""
@@ -433,26 +438,29 @@ fi
 #
 # Last Comments
 #
-echo ""
-DisplaySection "DON'T PANIC"
-echo ""
-echo "NOTES on WSL Deployment:"
-echo ""
-echo "You may have recieved one or more of the following messages:"
-echo ""
-echo "[1] System has not been booted with systemd as init system (PID 1). Can't operate."
-echo "[2] Failed to connect to bus: Host is down"
-echo "[3] Couldn't find an alternative telinit implementation to spawn."
-echo ""
-echo "Do not panic."
-echo ""
-echo "You will need to terminate the WSL VM host and restart."
-echo "This will force the correct reading of the configs."
-echo "To terminate a WSL host, it will look something like the following:"
-echo ""
-echo "POWERSHELL> wsl -t <Your Linux Distro>"
-echo ""
 
+if (( OPTION_WSL ))
+then
+  echo ""
+  DisplaySection "DON'T PANIC"
+  echo ""
+  echo "NOTES on WSL Deployment:"
+  echo ""
+  echo "You may have recieved one or more of the following messages:"
+  echo ""
+  echo "[1] System has not been booted with systemd as init system (PID 1). Can't operate."
+  echo "[2] Failed to connect to bus: Host is down"
+  echo "[3] Couldn't find an alternative telinit implementation to spawn."
+  echo ""
+  echo "Do not panic."
+  echo ""
+  echo "You will need to terminate the WSL VM host and restart."
+  echo "This will force the correct reading of the configs."
+  echo "To terminate a WSL host, it will look something like the following:"
+  echo ""
+  echo "POWERSHELL> wsl -t <Your Linux Distro>"
+  echo ""
+fi 
 DisplaySection "FINISHED"
 
 echo ""
