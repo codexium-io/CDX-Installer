@@ -20,9 +20,10 @@ source ${THIS_DIR}/display_functions.include
 
 #clear
 
+DisplaySection "CODEXium : Change Site Name"
+
 if [[ $1 == "--help" || $1 == "-help" || $1 == "help" || $1 == "-h" || $1 == "about" || $1 == "--about" || $1 == "-about" ]]
 then
-  DisplaySection "# CODEXium : Change Site Name"
   DisplayBlockLine "#"
   DisplayBlockLine "# This script will change your site name."
   DisplayBlockLine "#"
@@ -82,6 +83,6 @@ echo "#> systemctl stop httpd"
 echo "#> systemctl start httpd"
 echo ""
 
-DisplaySection "# Finished"
+DisplaySection "Finished"
 
 echo ""
