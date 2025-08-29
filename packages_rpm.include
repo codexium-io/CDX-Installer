@@ -8,15 +8,15 @@
 # System Packages
 #
 OS_Packages_RPM=(
+  "epel-release" 
   "git"
   "httpd" 
   "mod_ssl"
   "mod_session"
   "perl"
+  "perl-CPAN"
   "perl-CGI"
   "perl-Inline-Files"
-  "perl-CPAN"
-  "epel-release" # For "rcs"
   "rcs"
   "lm_sensors" 
 )

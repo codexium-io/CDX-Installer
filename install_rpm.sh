@@ -65,6 +65,19 @@ else
   for PACKage in "${OS_Packages_RPM[@]}"
   do
     dnf install -y ${PACKage}
+    wait
+    #
+    # Verify it installed
+    #
+    PkgNotInstalled = $( rpm -q ${PACKage} 2>/dev/null 1>&2 )
+    if (( PkgNotInstalled ))
+    then
+      echo "ERROR: Package ${PACKage} not installed"
+      echo "ERROR: It may be there is no access to an EPEL-like repo."
+      echo "ERROR: It may be a problem with the upstream repo."
+      echo "ERROR: Investigate with a Linux Admin."
+      exit 78
+    fi
   done
 fi
 #
@@ -461,6 +474,9 @@ then
   echo "POWERSHELL> wsl -t <Your Linux Distro>"
   echo ""
 fi 
+
+echo ""
+
 DisplaySection "FINISHED"
 
 echo ""
