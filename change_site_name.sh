@@ -38,9 +38,6 @@ then
   (( DomainCLI = 1 ))
 fi
 
-
-DisplayBlockFill
-
 #
 # Get new name from prompt
 #
