@@ -1,8 +1,8 @@
 # CDX-Installer
 
-This repo will install/setup the _CODEXium_ service/software.
+This repo will install/setup the _CODEXium_ CORE service/software.
 
-Use the script "install.sh" to install and setup/configure the CORE software and any Add-On's.
+Use the script "install.sh" to setup/configure the software.
 
 Use the script "update.sh" to update the software.
 
