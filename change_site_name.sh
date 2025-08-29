@@ -69,3 +69,5 @@ echo "#> systemctl start httpd"
 echo ""
 
 DisplaySection "# Finished"
+
+echo ""
