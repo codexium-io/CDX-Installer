@@ -40,26 +40,27 @@ then
   echo "EXITING"
   exit
 fi
+
 #
-# Look for a loaded ssh key
-#
-ssh-add -l 2>/dev/null 1>&2
-if (( $? ))
-then
-  #
-  # ssh keyring not working and no key found
-  #
-  echo "WARNING: No key loaded"
-  echo "HINT: ssh-agent bash # This will enable the keyring"
-  echo "HINT: ssh-add ~/.ssh/CODEXium.key"
-  echo "HINT: ssh-add -l # This should list the key just added"
-  echo "OR"
-  echo "HINT: git config core.sshcommand 'ssh -i ~/.ssh/CODEXium.key'"
-  echo "HINT: check with \"git config --list\""
-  echo ""
-  echo "OK: CONTINUING: We will assume a key is configured."
-  echo ""
-fi
+#X13# # Look for a loaded ssh key
+#X13# #
+#X13# ssh-add -l 2>/dev/null 1>&2
+#X13# if (( $? ))
+#X13# then
+#X13#   #
+#X13#   # ssh keyring not working and no key found
+#X13#   #
+#X13#   echo "WARNING: No key loaded"
+#X13#   echo "HINT: ssh-agent bash # This will enable the keyring"
+#X13#   echo "HINT: ssh-add ~/.ssh/CODEXium.key"
+#X13#   echo "HINT: ssh-add -l # This should list the key just added"
+#X13#   echo "OR"
+#X13#   echo "HINT: git config core.sshcommand 'ssh -i ~/.ssh/CODEXium.key'"
+#X13#   echo "HINT: check with \"git config --list\""
+#X13#   echo ""
+#X13#   echo "OK: CONTINUING: We will assume a key is configured."
+#X13#   echo ""
+#X13# fi
 
 #
 # Check Environment and Call Correct Installer
