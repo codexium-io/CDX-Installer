@@ -176,7 +176,7 @@ else
     #
     git config --global safe.directory /www/CDX-CORE
     git config --global core.fileMode false
-    git clone -c "core.sshCommand=ssh -i ~/.ssh/CODEXium_CORE.key" git@github.com:codexium-io/CDX-CORE.git ${CORE}
+    git clone -c "core.sshCommand=ssh -i ~/.ssh/CODEXium-CORE.key" git@github.com:codexium-io/CDX-CORE.git ${CORE}
     if (( $? ))
     then
       echo ""
