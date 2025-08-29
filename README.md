@@ -20,8 +20,8 @@ e.g.
 ```
 cp CODEXium-DeployKey-2025-Q4.key ~/.ssh/ ;
 cp ~/.ssh/CODEXium-DeployKey-2025-Q4.key ~/.ssh/CODEXium-CORE.key ;
-chmod 400 ~/.ssh/CODEXium-.DeployKey-2025-Q4.key
-chmod 400 ~/.ssh/CODEXium-CORE.key
+chmod 400 ~/.ssh/CODEXium-.DeployKey-2025-Q4.key ;
+chmod 400 ~/.ssh/CODEXium-CORE.key ;
 ```
 
 To get this CDX-Installer software ...
