@@ -43,6 +43,7 @@ read ANYKEY
 #
 # Backup Current Config
 #
+echo ""
 DisplayLineStart "Backup website config"
 cp /etc/httpd/conf/codexium.conf /etc/httpd/conf/codexium_conf.backup_${DATE}
 DisplayLineEnd
@@ -59,7 +60,6 @@ echo ""
 #
 # Restart Webserver
 #
-echo ""
 echo "NOTE: Manually Restart the webserver"
 echo ""
 echo "#> systemctl restart httpd"
