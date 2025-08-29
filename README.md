@@ -36,10 +36,10 @@ cd CDX-Installer ;
 ./install.sh ;
 ```
 
-Let's change the domain to "example.com" ...
+Let's change the domain from demo.cdx.wiki to "something.example.com" ...
 
 ```
-./change_site_name.sh
+./change_site_name.sh something.example.com
 ```
 
 Then restart the webserver ...

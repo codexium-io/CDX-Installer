@@ -20,26 +20,40 @@ source ${THIS_DIR}/display_functions.include
 
 #clear
 
-DisplaySection "# CODEXium : Change Site Name"
-DisplayBlockLine "#"
-DisplayBlockLine "# This script will change your site name."
-DisplayBlockLine "#"
-DisplayBlockLine "# e.g."
-DisplayBlockLine "# \"demo.cdx.wiki\" to \"accounting.example.com\""
-DisplayBlockLine "#"
-DisplayBlockLine "# If you make a mistake, rerun this script"
-DisplayBlockLine "# or edit \"codexium.conf\""
+if [[ $1 == "--help" || $1 == "-help" || $1 == "help" || $1 == "-h" || $1 == "about" || $1 == "--about" || $1 == "-about" ]]
+then
+  DisplaySection "# CODEXium : Change Site Name"
+  DisplayBlockLine "#"
+  DisplayBlockLine "# This script will change your site name."
+  DisplayBlockLine "#"
+  DisplayBlockLine "# e.g."
+  DisplayBlockLine "# \"demo.cdx.wiki\" to \"accounting.example.com\""
+  DisplayBlockLine "#"
+  DisplayBlockLine "# If you make a mistake, rerun this script"
+  DisplayBlockLine "# or edit \"codexium.conf\""
+elif [[ $1 == "--domain" ]]
+then
+  DOMAIN=$2 
+  (( DomainCLI = 1 ))
+fi
+
+
 DisplayBlockFill
+
 #
-# Get new name
+# Get new name from prompt
 #
-echo ""
-echo "CONFIGURE: Enter the host/DNS/domain you own/control : "
-echo -n "DOMAIN : "
-read DOMAIN
-echo "You have entered the name >>>${DOMAIN}<<<."
-echo -n "Continue ? : [any key]"
-read ANYKEY
+if (( ! DomainCLI ))
+then
+  echo ""
+  echo "CONFIGURE: Enter the host/DNS/domain you own/control : "
+  echo -n "DOMAIN : "
+  read DOMAIN
+  echo "You have entered the name >>>${DOMAIN}<<<."
+  echo -n "Continue ? : [any key]"
+  read ANYKEY
+fi
+
 #
 # Backup Current Config
 #
