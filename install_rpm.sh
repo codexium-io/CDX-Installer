@@ -62,6 +62,7 @@ else
   #
   # dnf check-update
   #
+ (( PkgNotInstalled = 1 ))
   for PACKage in "${OS_Packages_RPM[@]}"
   do
     dnf install -y ${PACKage}
@@ -69,7 +70,7 @@ else
     #
     # Verify it installed
     #
-    PkgNotInstalled = $( rpm -q ${PACKage} 2>/dev/null 1>&2 )
+    PkgNotInstalled=$( rpm -q ${PACKage} 2>/dev/null 1>&2 )
     if (( PkgNotInstalled ))
     then
       echo "ERROR: Package ${PACKage} not installed"
@@ -78,6 +79,7 @@ else
       echo "ERROR: Investigate with a Linux Admin."
       exit 78
     fi
+    (( PkgNotInstalled = 1 ))
   done
 fi
 #
