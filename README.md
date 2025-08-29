@@ -18,9 +18,9 @@ OR, you can just copy the following and run it.
 
 e.g.
 ```
-cp CODEXium-DeployKey-2025-Q4.key ~/.ssh/ ;
-cp ~/.ssh/CODEXium-DeployKey-2025-Q4.key ~/.ssh/CODEXium-CORE.key ;
-chmod 400 ~/.ssh/CODEXium-.DeployKey-2025-Q4.key ;
+cp CODEXium-CORE-DeployKey-2025-Q4.key ~/.ssh/ ;
+cp ~/.ssh/CODEXium-CORE-DeployKey-2025-Q4.key ~/.ssh/CODEXium-CORE.key ;
+chmod 400 ~/.ssh/CODEXium-CORE-DeployKey-2025-Q4.key ;
 chmod 400 ~/.ssh/CODEXium-CORE.key ;
 ```
 
