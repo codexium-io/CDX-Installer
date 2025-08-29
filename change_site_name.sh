@@ -50,12 +50,9 @@ DisplayLineEnd
 # Update codexium.conf
 #
 echo ""
-echo -n "Continue ? : [any key]"
-read ANYKEY
-echo ""
 DisplayLineStart "Modifying codexium.conf"
 COMMAND_STRING="sed -i 's/^ServerName.*/ServerName ${DOMAIN}/g' /etc/httpd/conf/codexium.conf"
-echo "${COMMAND_STRING}"
+#DEBUG# echo "${COMMAND_STRING}"
 eval ${COMMAND_STRING}
 DisplayLineEnd
 echo ""

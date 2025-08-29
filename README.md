@@ -2,9 +2,11 @@
 
 This repo will install/setup the _CODEXium_ CORE service/software.
 
-Use the script "install.sh" to setup/configure the software.
+To get this CDX-Installer software ...
 
-Use the script "update.sh" to update the software.
+```
+git clone https://github.com/codexium-io/CDX-Installer.git
+```
 
 If you have purchased the software, you should have a license key.
 
@@ -24,10 +26,28 @@ chmod 400 ~/.ssh/CODEXium-CORE-DeployKey-2025-Q4.key ;
 chmod 400 ~/.ssh/CODEXium-CORE.key ;
 ```
 
-To get this CDX-Installer software ...
+Now you can use the script "./install.sh" to setup the software.  
+If you are installing on a new server dedicated to this software,
+you can just accept all the prompts.
+You may need to change the server name with the included script.
 
 ```
-git clone https://github.com/codexium-io/CDX-Installer.git
+cd CDX-Installer ;
+./install.sh ;
 ```
+
+Let's change the domain to "example.com" ...
+
+```
+./change_site_name.sh
+```
+
+Then restart the webserver ...
+
+```
+systemctl restart httpd
+```
+
+
 
 

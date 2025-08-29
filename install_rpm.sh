@@ -42,6 +42,7 @@ source ${THIS_DIR}/packages_rpm.include # "${Packages[@]}" array
 #
 # clear 2>/dev/null
 DisplaySection "CODEXium : RPM Installation Started"
+echo ""
 
 #
 # START : Install Packages
@@ -194,7 +195,6 @@ else
     git config --global safe.directory ${CORE}
     git config --global core.fileMode true
     git config --global core.sshCommand 'ssh -i ~/.ssh/CODEXium-CORE.key -o StrictHostKeyChecking=no'
-    #git clone -c "core.sshCommand=ssh -i ~/.ssh/CODEXium-CORE.key" git@github.com:codexium-io/CDX-CORE.git ${CORE}
     git clone git@github.com:codexium-io/CDX-CORE.git ${CORE}
     if (( $? ))
     then
