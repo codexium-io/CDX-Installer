@@ -20,8 +20,13 @@ OR, you can just copy the following and run it.
 
 e.g.
 ```
-scp CODEXium-CORE-DeployKey-2025-Q4.key MyCoolServer:~/.ssh/ ;
+scp CODEXium-CORE-DeployKey-2025-Q4.key CoolJoe@MyCoolServer:~/.ssh/ ;
+# You may need to move the key, as root, from a user directory into 
+# root's .ssh directory.
+sudo su -
+mv ~CoolJoe/.ssh/CODEXium-CORE-DeployKey-2025-Q4.key ~/.ssh 
 cp ~/.ssh/CODEXium-CORE-DeployKey-2025-Q4.key ~/.ssh/CODEXium-CORE.key ;
+# You now have a backup
 chmod 400 ~/.ssh/CODEXium-CORE-DeployKey-2025-Q4.key ;
 chmod 400 ~/.ssh/CODEXium-CORE.key ;
 ```
