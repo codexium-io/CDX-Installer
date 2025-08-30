@@ -229,7 +229,18 @@ else
   DisplaySection "Establish Credential Files"
   echo ""
   DisplayLineStart "Moving user/password files to ${BASE}"
-  cp ${CORE}/htpasswd-*.txt ${BASE} 
+  for AuthGroup in "users editors admins"
+  do
+    if [[ ! -f ${BASE}/htpasswd-${AuthGroup}.txt ]]
+    then
+      cp ${CORE}/htpasswd-${AuthGroup}.txt ${BASE} 
+    else
+      echo ""
+      echo "FILE EXISTS: \"htpasswd-${AuthGroup}.txt\" ... SKIPPING"
+      echo "[SKIPPED]"
+      echo ""
+    fi
+  done
   cp ${CORE}/Users_and_Passwords.txt ${BASE}
   DisplayLineEnd
   echo ""
