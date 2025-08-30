@@ -228,8 +228,8 @@ else
   #
   DisplaySection "Establish Credential Files"
   echo ""
-  DisplayLineStart "Moving user/password files to ${BASE}"
-  for AuthGroup in "users editors admins"
+  echo "Moving user/password files to ${BASE}"
+  for AuthGroup in users editors admins
   do
     if [[ ! -f ${BASE}/htpasswd-${AuthGroup}.txt ]]
     then
@@ -241,10 +241,7 @@ else
       echo ""
     fi
   done
-  cp ${CORE}/Users_and_Passwords.txt ${BASE}
-  DisplayLineEnd
   echo ""
-  echo "NOTE: The credential files have been copied."
   echo "NOTE: The credential files are for reference."
   echo "NOTE: Please also see the file \"Users_and_Passwords.txt\""
   echo "NOTE: You will want to edit these files for specific usernames and passwords."
