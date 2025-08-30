@@ -10,7 +10,7 @@ git clone https://github.com/codexium-io/CDX-Installer.git
 
 If you purchased the software, you will recieve a license key.
 
-* Copy your license key, as root, to your host "MyCoolServer:~/.ssh/" . 
+* Copy your license key, as root, to your host "woodstock:~/.ssh/" . 
 * Copy the license key to the target file name .
 * Change the mode to read-only on the original license key .  
   (You now have a backup key.)
