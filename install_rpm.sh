@@ -239,7 +239,7 @@ else
     fi
   done
   echo ""
-  echo "NOTE: The credential files are for reference."
+  echo "NOTE: The included credential files are for reference."
   echo "NOTE: Please also see the file \"Users_and_Passwords.txt\""
   echo "NOTE: You will want to edit these files for specific usernames and passwords."
   echo "NOTE: Delete the file \"Users_and_Passwords.txt\" when you are finished adding a few users."
