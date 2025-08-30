@@ -236,9 +236,7 @@ else
       cp ${CORE}/htpasswd-${AuthGroup}.txt ${BASE} 
     else
       echo ""
-      echo "FILE EXISTS: \"htpasswd-${AuthGroup}.txt\" ... SKIPPING"
-      echo "[SKIPPED]"
-      echo ""
+      echo "FILE EXISTS: \"htpasswd-${AuthGroup}.txt\" ... [SKIPPED]"
     fi
   done
   echo ""
