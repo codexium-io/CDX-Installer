@@ -5,7 +5,7 @@ This repo will install/setup the _CODEXium_ CORE service/software.
 To get this CDX-Installer software ...
 
 ```
-git clone https://github.com/codexium-io/CDX-Installer.git
+git clone https://github.com/codexium-io/CDX-Installer
 ```
 
 If you purchased the software, you will recieve a license key.
@@ -35,6 +35,7 @@ you can just accept all the prompts.
 You may need to change the server name with the included script.
 
 ```
+git clone https://github.com/codexium-io/CDX-Installer
 cd CDX-Installer ;
 ./install.sh ;
 ```
