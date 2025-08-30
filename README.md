@@ -8,7 +8,7 @@ To get this CDX-Installer software ...
 git clone https://github.com/codexium-io/CDX-Installer.git
 ```
 
-If you have purchased the software, you should have a license key.
+If you purchased the software, you will recieve a license key.
 
 * Copy your license key, as root, to your host "MyCoolServer:~/.ssh/" . 
 * Copy the license key to the target file name .
