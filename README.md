@@ -19,7 +19,7 @@ If you purchased the software, you will recieve a license key.
 OR, you can just copy the following and run it.
 
 e.g.
-```sh
+```
 scp CODEXium-CORE-DeployKey-2025-Q4.key CoolJoe@MyCoolServer:~/.ssh/ ;
 # You may need to move the key, as root, from the "CoolJoe"
 # user directory into root's .ssh directory.
