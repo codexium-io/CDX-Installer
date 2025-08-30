@@ -167,7 +167,7 @@ fi
 DisplayLineEnd
 #
 echo ""
-echo -n "INSTALL: CORE Repo [y]/n : "
+echo -n "INSTALL: CODEXium CORE Repo [y]/n : "
 read ANSWER 
 if [[ ${ANSWER} == "n" ]]
 then
@@ -229,13 +229,13 @@ else
   DisplaySection "Establish Credential Files"
   echo ""
   echo "Moving user/password files to ${BASE}"
+  echo ""
   for AuthGroup in users editors admins
   do
     if [[ ! -f ${BASE}/htpasswd-${AuthGroup}.txt ]]
     then
       cp ${CORE}/htpasswd-${AuthGroup}.txt ${BASE} 
     else
-      echo ""
       echo "FILE EXISTS: \"htpasswd-${AuthGroup}.txt\" ... [SKIPPED]"
     fi
   done
