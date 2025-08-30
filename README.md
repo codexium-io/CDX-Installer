@@ -36,6 +36,10 @@ cd CDX-Installer ;
 ./install.sh ;
 ```
 
+NOTE: You will have to reboot for the disabled SELinux to take effect.
+
+We don't need to reboot just yet ... we can change the domain if we need to.
+
 Let's change the domain from demo.cdx.wiki to "something.example.com" ...
 
 ```
