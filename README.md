@@ -42,6 +42,7 @@ cd CDX-Installer ;
 
 We will have to reboot for some items to fully take effect.
 However, We don't need to reboot just yet ... we can change the domain if needed.
+
 Let's change the domain from demo.cdx.wiki to "something.example.com" ...
 
 ```
