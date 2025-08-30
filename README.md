@@ -58,6 +58,11 @@ Then restart the webserver ...
 systemctl restart httpd
 ```
 
+Then reboot ...
+
+```
+reboot
+```
 
 
 
