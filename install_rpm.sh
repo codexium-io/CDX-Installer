@@ -411,10 +411,16 @@ echo -n "Do you accept the default domain ? [y]/n : "
 read ANSWER
 if [[ "${ANSWER}" == "n" ]]
 then
-  ${THIS_DIR}/change_site_name.sh
-else
-  echo "Accepted default domain."
-  echo ""
+  echo -n "Do you want to configuring the domain ? [y]/n : "
+  read ANSWER
+  if [[ "${ANSWER}" == "n" ]]
+  then
+    echo "Domain unchanged."
+    echo "[SKIPPED]"
+    echo ""
+  else
+    ${THIS_DIR}/change_site_name.sh
+  fi 
 fi
 
 #
