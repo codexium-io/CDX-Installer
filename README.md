@@ -20,13 +20,14 @@ scp CODEXium-CORE-DeployKey-2025-Q4.key cooljoe@woodstock:~ ;
 Connect to the "woodstock" server.
 
 ```
+scp CODEXium-CORE-2025-Q4.key cooljoe@woodstock:~
 ssh cooljoe@woodstock ;
-sudo su - ; # You are now "root"
-mv ~cooljoe/CODEXium-CORE-DeployKey-2025-Q4.key ~/.ssh ;
-cp ~/.ssh/CODEXium-CORE-DeployKey-2025-Q4.key ~/.ssh/CODEXium-CORE.key ;
-# You now have a backup key
-chmod 400 ~/.ssh/CODEXium-CORE-DeployKey-2025-Q4.key ;
-chmod 400 ~/.ssh/CODEXium-CORE.key ;
+sudo su - ; 
+mkdir ~/.ssh 2>/dev/null ;
+chmod 700 ~/.ssh ;
+mv ~cooljoe/CODEXium-CORE-2025-Q4.key ~/.ssh ;
+chmod 400 ~/.ssh/CODEXium-CORE-2025-Q4.key ;
+cp ~/.ssh/CODEXium-CORE-2025-Q4.key ~/.ssh/CODEXium-CORE.key ;
 ```
 
 Now you can use the script "./install.sh" to setup the software.  
