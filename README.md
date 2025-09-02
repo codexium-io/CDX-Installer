@@ -2,6 +2,8 @@
 
 This repo will install/setup the _CODEXium_ CORE service/software.
 
+_CODEXium_ is currently configured to run on Rocky, Alma, CentOS, etc. variants.
+
 To get this CDX-Installer software ...
 
 ```
