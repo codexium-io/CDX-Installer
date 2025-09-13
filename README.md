@@ -71,7 +71,7 @@ you can just accept all the prompts.
 Afterward, you may need to change the server name with the included script.
 
 ```bash
-git clone https://github.com/codexium-io/CDX-Installer
+git clone https://github.com/codexium-io/CDX-Installer ;
 cd CDX-Installer ;
 ./install.sh ;
 ```
