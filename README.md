@@ -45,13 +45,13 @@ e.g.
 # "woodstock" is whatever host you want to install on.
 # "cooljoe" is whatever your user account is.
 #
-scp CODEXium-CORE-DeployKey-2025-Q4.key cooljoe@woodstock:~ 
+scp CODEXium-CORE-2025-Q4.key cooljoe@woodstock:~ 
 ```
 
 Connect to the "woodstock" server.
 
 ```bash
-scp CODEXium-CORE-2025-Q4.key cooljoe@woodstock:~
+ssh cooljoe@woodstock
 ```
 
 Run the following commands (as root):
