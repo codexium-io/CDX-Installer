@@ -1,4 +1,28 @@
-# CDX-Installer
+CDX-Installer
+=============
+
+Install Overview
+----------------
+
+The installation of CODEXium™ is done via a set of scripts and 
+a license key stored in root's ".ssh" directory.
+
+The install scripts are available for download from a public repo.  
+The public repo is ...  
+
+<https://github.com/codexium-io/CDX-Installer>
+
+The core CODEXium™ license key can can be purchased from the sales area.
+The CODEXium™ core repo, "CDX-CORE", is a private repo only available via license key.
+
+
+[CODEXium Sales](https://codexium.io/sales.html)
+
+
+
+
+Install Procedure
+-----------------
 
 This repo will install/setup the _CODEXium_ CORE service/software.
 
@@ -45,7 +69,7 @@ cp ~/.ssh/CODEXium-CORE-2025-Q4.key ~/.ssh/CODEXium-CORE.key ;
 Now you can use the script "./install.sh" to setup the software.  
 If you are installing on a new server dedicated to this software,
 you can just accept all the prompts.
-You may need to change the server name with the included script.
+Afterward, you may need to change the server name with the included script.
 
 ```bash
 git clone https://github.com/codexium-io/CDX-Installer
@@ -53,10 +77,36 @@ cd CDX-Installer ;
 ./install.sh ;
 ```
 
-This will set your webserver domain to "demo.cdx.wiki"/127.0.0.1.
+This will set your webserver domain to "**demo.cdx.wiki**"/127.0.0.1.  
 
-We will have to reboot for some items to fully take effect.
-However, We don't need to reboot just yet ... we can change the domain if needed.
+NOTE: Microsoft WSL only allows for http://localhost
+
+See section _Changing the Webserver Domain Name_ for details on how
+to change the name.
+
+Check the status of the webserver ...
+
+```bash
+systemctl status httpd
+```
+
+Then, if needed, restart the webserver ...
+
+```bash
+systemctl restart httpd
+```
+
+Then, if in WSL or if needed, reboot ...
+
+```bash
+reboot
+```
+
+
+
+
+Changing the Webserver Domain Name
+----------------------------------
 
 Let's change the domain from "demo.cdx.wiki" to "something.example.com" ...
 
