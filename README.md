@@ -65,7 +65,7 @@ chmod 400 ~/.ssh/CODEXium-CORE-2025-Q4.key ;
 cp ~/.ssh/CODEXium-CORE-2025-Q4.key ~/.ssh/CODEXium-CORE.key ;
 ```
 
-Now you can use the script "./install.sh" to setup the software.  
+Now you can download the software and run the install scriopt.
 If you are installing on a new server dedicated to this software,
 you can just accept all the prompts.
 Afterward, you may need to change the server name with the included script.
