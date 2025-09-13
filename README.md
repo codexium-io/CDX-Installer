@@ -6,23 +6,33 @@ _CODEXium_ is currently configured to run on Rocky, Alma, CentOS, etc. variants.
 
 To get this CDX-Installer software ...
 
-```
+```bash
 git clone https://github.com/codexium-io/CDX-Installer
 ```
 
-If you purchased the software, you will recieve a license key.
+If you purchased the software, you will recieve a license key similar to, for example,
+_CODEXium-CORE-2025-Q4.key_ .
 
 Use the following steps to install your license key.
 
 e.g.
-```
-scp CODEXium-CORE-DeployKey-2025-Q4.key cooljoe@woodstock:~ ;
+```bash
+#
+# "woodstock" is whatever host you want to install on.
+# "cooljoe" is whatever your user account is.
+#
+scp CODEXium-CORE-DeployKey-2025-Q4.key cooljoe@woodstock:~ 
 ```
 
 Connect to the "woodstock" server.
 
-```
+```bash
 scp CODEXium-CORE-2025-Q4.key cooljoe@woodstock:~
+```
+
+Run the following commands (as root):
+
+```bash
 ssh cooljoe@woodstock ;
 sudo su - ; 
 mkdir ~/.ssh 2>/dev/null ;
@@ -37,7 +47,7 @@ If you are installing on a new server dedicated to this software,
 you can just accept all the prompts.
 You may need to change the server name with the included script.
 
-```
+```bash
 git clone https://github.com/codexium-io/CDX-Installer
 cd CDX-Installer ;
 ./install.sh ;
@@ -50,31 +60,31 @@ However, We don't need to reboot just yet ... we can change the domain if needed
 
 Let's change the domain from "demo.cdx.wiki" to "something.example.com" ...
 
-```
+```bash
 ./change_site_name.sh --domain something.example.com
 ```
 
 OR, interactively ...
 
-```
+```bash
 ./change_site_name.sh
 ```
 
 Check the status of the webserver ...
 
-```
+```bash
 systemctl status httpd
 ```
 
 Then, if needed, restart the webserver ...
 
-```
+```bash
 systemctl restart httpd
 ```
 
 Then, if in WSL or if needed, reboot ...
 
-```
+```bash
 reboot
 ```
 
