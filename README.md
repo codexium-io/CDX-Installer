@@ -57,7 +57,6 @@ ssh cooljoe@woodstock
 Run the following commands (as root):
 
 ```bash
-ssh cooljoe@woodstock ;
 sudo su - ; 
 mkdir ~/.ssh 2>/dev/null ;
 chmod 700 ~/.ssh ;
