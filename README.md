@@ -60,13 +60,19 @@ OR, interactively ...
 ./change_site_name.sh
 ```
 
-Then restart the webserver ...
+Check the status of the webserver ...
+
+```
+systemctl status httpd
+```
+
+Then, if needed, restart the webserver ...
 
 ```
 systemctl restart httpd
 ```
 
-Then reboot ...
+Then, if in WSL or if needed, reboot ...
 
 ```
 reboot
