@@ -39,6 +39,12 @@ _CODEXium-CORE-2025-Q4.key_ .
 
 Use the following steps to install your license key.
 
+OR, even better, you can refer to the website "HowTo" section.
+The "HowTo" section also has an auto-fill button to customize
+the commands for your username and hostname.
+
+[CODEXium HowTo](https://codexium.io/howto.html)
+
 e.g.
 ```bash
 #
@@ -48,16 +54,21 @@ e.g.
 scp CODEXium-CORE-2025-Q4.key cooljoe@woodstock:~ 
 ```
 
-Connect to the "woodstock" server.
+Connect to your server.
 
 ```bash
 ssh cooljoe@woodstock
 ```
 
+Become root ...
+
+```bash
+sudo su - ; # You should become the "root" user.
+```
+
 Run the following commands (as root):
 
 ```bash
-sudo su - ; 
 mkdir ~/.ssh 2>/dev/null ;
 chmod 700 ~/.ssh ;
 mv ~cooljoe/CODEXium-CORE-2025-Q4.key ~/.ssh ;
