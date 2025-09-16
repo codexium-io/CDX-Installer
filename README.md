@@ -45,6 +45,9 @@ the commands for your username and hostname.
 
 [CODEXium HowTo](https://codexium.io/howto.html)
 
+Otherwise, in the following set of commands, please change
+"cooljoe"/"woodstock" to be your username/hostname.
+
 ```bash
 #
 # "woodstock" is whatever host you want to install on.
