@@ -45,7 +45,6 @@ the commands for your username and hostname.
 
 [CODEXium HowTo](https://codexium.io/howto.html)
 
-e.g.
 ```bash
 #
 # "woodstock" is whatever host you want to install on.
