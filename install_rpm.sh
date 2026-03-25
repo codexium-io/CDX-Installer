@@ -196,14 +196,13 @@ else
     read LicenseKey
     if [[ -f "$LicenseKey" ]]
     then
-      echo "cp $LicenseKey /www/CODEXium-License.key"
-      echo ""
+      #echo "cp $LicenseKey /www/CODEXium-License.key"
+      #echo ""
       cp $LicenseKey /www/CODEXium-License.key
       if [[ -f /www/CODEXium-License.key ]]
       then
         echo ""
         echo "License key installed!"
-        echo ""
       else
         echo ""
         echo "[ERROR]: License key not found ... exiting."
