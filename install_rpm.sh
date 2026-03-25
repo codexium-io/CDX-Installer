@@ -506,7 +506,7 @@ then
     echo ""
   else
     echo "Running : ${THIS_DIR}/change_site_name.sh"
-    ${THIS_DIR}/change_site_name.sh
+    ${THIS_DIR}/change_site_name.sh Installer
   fi 
 fi
 

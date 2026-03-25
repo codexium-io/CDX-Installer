@@ -15,6 +15,7 @@ DATE=$(date +Y%Y.M%m.D%d.h%H.m%M)
 BASE="/www"
 CORE="${BASE}/CDX-CORE"
 THIS_DIR=$(dirname $0)
+CALLER=$1
 
 source ${THIS_DIR}/display_functions.include
 
@@ -72,13 +73,19 @@ echo ""
 #
 # Restart Webserver
 #
-echo "NOTE: Manually Restart the webserver"
-echo ""
-echo "#> systemctl restart httpd"
-echo "OR"
-echo "#> systemctl stop httpd"
-echo "#> systemctl start httpd"
-echo ""
+if [[ $CALLER eq "Installer" ]]
+then
+  echo "Finished setting domain name"
+  echo ""
+else
+  echo "NOTE: Manually Restart the webserver"
+  echo ""
+  echo "#> systemctl restart httpd"
+  echo "OR"
+  echo "#> systemctl stop httpd"
+  echo "#> systemctl start httpd"
+  echo ""
+fi
 
 DisplaySection "Finished"
 
