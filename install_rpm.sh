@@ -173,19 +173,13 @@ echo -n "Do you have a license key file ? [y]/n : "
 read ANSWER
 if [[ ${ANSWER} == "n" ]]
 then 
-  echo -n "INSTALL: Do you want to paste the key contents instead ? [y]/n : "
-  read ANSWER
-  if [[ ${ANSWER} == "n" ]]
-  then 
-    echo "[SKIPPED]: Assuming the key is alreading installed."
-    echo ""
-  else
-    echo "Enter the key Here"
-    echo "Paste Key Contents>" 
-    read LicenseKey
-    cat $LicenseKey > /www/CODEXium-License.key
-  fi
+  echo ""
+  echo "[SKIPPED]: Assuming the key is alreading installed."
+  echo ""
 else
+  # 
+  # Try a couple of default locations
+  #
   if [[ -f ~/.ssh/CODEXium-License.key ]]
   then 
     echo "Using root ~/CODEXium-License.key"
