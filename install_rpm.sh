@@ -163,6 +163,8 @@ DisplayLineStart "Establishing directory \"${BASE}\"."
 if [[ ! -d ${BASE} ]]
 then
   mkdir ${BASE}
+  chown apache:apache ${BASE}
+  chmod g+s ${BASE}
 fi
 DisplayLineEnd
 #
@@ -175,7 +177,6 @@ if [[ ${ANSWER} == "n" ]]
 then 
   echo ""
   echo "[SKIPPED]: Assuming the key is alreading installed."
-  echo ""
 else
   # 
   # Try a couple of default locations
@@ -199,6 +200,7 @@ else
       #echo "cp $LicenseKey /www/CODEXium-License.key"
       #echo ""
       cp $LicenseKey /www/CODEXium-License.key
+      chmod 400 /www/CODEXium-License.key
       if [[ -f /www/CODEXium-License.key ]]
       then
         echo ""
@@ -306,6 +308,8 @@ else
   echo ""
   DisplayLineStart "Setting user:group to apache:apache on ${CORE}"
   chown -R apache:apache ${CORE}
+  # Set Group Sticky Bit ... SGID
+  chmod -R g+s ${CORE}
   DisplayLineEnd
   #X15# DisplayLineStart "Changing permissions on ${CORE}/NOTE"
   #X15# chmod 775 ${CORE}/NOTE
