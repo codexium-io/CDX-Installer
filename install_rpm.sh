@@ -321,6 +321,31 @@ fi
 echo ""
 
 #
+# Configure Git Repo
+#
+DisplaySection "CODEXium : Install Software : Git Repo Configuration"
+#
+cd ${CORE}
+# 
+echo "[CONFIG]: core.sshcommand"
+git config core.sshCommand 'ssh -i /www/CODEXium-License.key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
+echo "[CONFIG]: core.sharedrepository"
+git config core.sharedrepository 'group'
+echo "[CONFIG]: safe.directory"
+git config safe.directory '/www/CDX-CORE'
+echo "[CONFIG]: safe.directory (global)"
+git config --global --add safe.directory /www/CDX-CORE
+#
+# Some default permisssions are still set to root after the config.
+# We will set ownership to "apache:apache", so that apache can pull new code.
+#
+echo "[CONFIG]: chown -R apache:apache ${CORE}/.git"
+chown -R apache:apache ${CORE}/.git
+chmod -R g+s ${CORE}/.git
+
+echo ""
+
+#
 # Install Apache Configs
 #
 DisplaySection "CODEXium : Install Software : Apache Setup"
