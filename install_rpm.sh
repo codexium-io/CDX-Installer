@@ -167,6 +167,61 @@ fi
 DisplayLineEnd
 #
 echo ""
+echo "INSTALL: CODEXium License"
+echo ""
+echo -n "Do you have a license key file ... \"CODEXium-License.key\" [y]/n : "
+read ANSWER
+if [[ ${ANSWER} == "n" ]]
+then 
+  echo -n "INSTALL: Do you want to paste the key contents instead ? [y]/n : "
+  if [[ ${ANSWER} == "n" ]]
+  then 
+    echo "[SKIPPED]: Assuming the key is alreading installed."
+    echo ""
+  else
+    echo "Enter the key Here"
+    echo "Paste Key Contents>" 
+    read LicenseKey
+    cat $LicenseKey > /www/CODEXium-License.key
+else
+  if [[ -f ~/.ssh/CODEXium-License.key ]]
+  then 
+    echo "Using root ~/CODEXium-License.key"
+    echo "cp ~/.ssh/CODEXium-License.key /www/CODEXium-License.key"
+    cp ~/.ssh/CODEXium-License.key /www/CODEXium-License.key
+  elif [[ -f ~/.ssh/CODEXium-License.key ]]
+  then
+    echo "Using root ~/CODEXium-License.key"
+    cp ~/CODEXium-License.key /www/CODEXium-License.key
+    echo "cp ~/CODEXium-License.key /www/CODEXium-License.key"
+  else
+    echo "Enter the full path to the CODEXium license key."
+    echo -n "FILE>"
+    read LicenseKey
+    if [[ -f "$LicenseKey" ]]
+    then
+      cp $LicenseKey /www/CODEXium-License.key
+      if [[ -f /www/CODEXium-License.key ]]
+      then
+        echo ""
+        echo "License key installed!"
+        echo ""
+      else
+        echo ""
+        echo "[ERROR]: License key not found ... exiting."
+        echo ""
+        exit
+      fi
+    else
+      echo ""
+      echo "[ERROR]: License key not found ... exiting."
+      echo ""
+      exit
+    fi
+  fi
+fi
+
+echo ""
 echo -n "INSTALL: CODEXium CORE Repo [y]/n : "
 read ANSWER 
 if [[ ${ANSWER} == "n" ]]
@@ -180,7 +235,7 @@ else
   #
   # git config core.sshCommand 'ssh -i ~/.ssh/CODEXium_Installer.key' 
   #
-  git config core.sshCommand 'ssh -i ~/.ssh/CODEXium-CORE.key'
+  # git config core.sshCommand 'ssh -i /www/CODEXium-License.key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
   #
   # Download the software and deploy it
   #
@@ -194,7 +249,7 @@ else
     #
     git config --global --add safe.directory ${CORE}
     git config --global core.fileMode true
-    git config --global core.sshCommand 'ssh -i ~/.ssh/CODEXium-CORE.key -o StrictHostKeyChecking=no'
+    git config --global core.sshCommand 'ssh -i /www/CODEXium-License.key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
     git clone git@github.com:codexium-io/CDX-CORE.git ${CORE}
     if (( $? ))
     then
