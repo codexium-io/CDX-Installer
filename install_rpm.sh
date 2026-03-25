@@ -23,7 +23,7 @@ CORE="${BASE}/CDX-CORE"
 (( OPTION_HTTP = 0 ))
 (( OPTION_HTTPS = 0 ))
 
-THIS_DIR=$(dirname $0)
+THIS_DIR=$(pwd)
 
 #OLD-KEEP# EXTRAS="${BASE}/CDX-ADDON" 
 #OLD-KEEP# ADDON=(
@@ -505,6 +505,7 @@ then
     echo "[SKIPPED]"
     echo ""
   else
+    echo "Running : ${THIS_DIR}/change_site_name.sh"
     ${THIS_DIR}/change_site_name.sh
   fi 
 fi
