@@ -169,7 +169,7 @@ DisplayLineEnd
 echo ""
 echo "INSTALL: CODEXium License"
 echo ""
-echo -n "Do you have a license key file ... \"CODEXium-License.key\" [y]/n : "
+echo -n "Do you have a license key file ? [y]/n : "
 read ANSWER
 if [[ ${ANSWER} == "n" ]]
 then 
@@ -183,6 +183,7 @@ then
     echo "Paste Key Contents>" 
     read LicenseKey
     cat $LicenseKey > /www/CODEXium-License.key
+  fi
 else
   if [[ -f ~/.ssh/CODEXium-License.key ]]
   then 
