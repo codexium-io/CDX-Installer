@@ -73,7 +73,7 @@ echo ""
 #
 # Restart Webserver
 #
-if [[ $CALLER eq "Installer" ]]
+if [[ "$CALLER" -eq "Installer" ]]
 then
   echo "Finished setting domain name"
   echo ""
