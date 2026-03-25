@@ -174,6 +174,7 @@ read ANSWER
 if [[ ${ANSWER} == "n" ]]
 then 
   echo -n "INSTALL: Do you want to paste the key contents instead ? [y]/n : "
+  read ANSWER
   if [[ ${ANSWER} == "n" ]]
   then 
     echo "[SKIPPED]: Assuming the key is alreading installed."
@@ -201,6 +202,8 @@ else
     read LicenseKey
     if [[ -f "$LicenseKey" ]]
     then
+      echo "cp $LicenseKey /www/CODEXium-License.key"
+      echo ""
       cp $LicenseKey /www/CODEXium-License.key
       if [[ -f /www/CODEXium-License.key ]]
       then
