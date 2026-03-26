@@ -397,18 +397,22 @@ else
     echo ""
     echo "IMPORTANT: PLEASE READ CAREFULLY"
     echo ""
-    echo "Pick a configuration option : "
+    echo "Pick a configuration option. "
+    echo "The default is [3]. "
+    echo "Hit Enter to accept [3|DEFAULT]. "
     echo ""
     echo "[1] http/80 running on Metal"
     #echo -e "\"\e[7mHOST:80\e[0m\""
     echo "[2] http/80 running on Microsoft/WSL"
-    echo "[3] https/443 running on Metal"
+    echo "[3|DEFAULT] https/443 running on Metal"
     echo ""
     echo -n "OPTION : "
     read ANSWER
     if [[ ${ANSWER} == "1" || ${ANSWER} == "2" || ${ANSWER} == "3" ]] 
     then
       (( NotDone = 0 ))
+    else
+      ANSWER="3"
     fi
   done
   #
