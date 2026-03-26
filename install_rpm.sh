@@ -413,6 +413,7 @@ else
     then
       (( NotDone = 0 ))
     elif [[ ${ANSWER} == "" ]]
+    then
       (( NotDone = 0 ))
       ANSWER="3"
     fi
