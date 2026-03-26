@@ -289,8 +289,6 @@ else
     then
       cp ${CORE}/htpasswd-${AuthGroup}.txt ${BASE} 
       echo "FILE COPIED: \"htpasswd-${AuthGroup}.txt\" to ${BASE}"
-      chown apache:apache ${BASE}/htpasswd-${AuthGroup}.txt
-      echo "FILE owner set to apache:apache"
     else
       echo "FILE EXISTS: \"htpasswd-${AuthGroup}.txt\" ... [SKIPPED]"
     fi
@@ -309,16 +307,14 @@ else
   echo ""
   DisplaySection "Setting Ownership"
   echo ""
-  DisplayLineStart "Setting user:group to apache:apache on ${CORE}"
-  chown -R apache:apache ${CORE}
+  #DisplayLineStart "Setting user:group to apache:apache on ${CORE}"
+  DisplayLineStart "Setting user:group to apache:apache on ${BASE}"
+  #chown -R apache:apache ${CORE}
+  chown -R apache:apache ${BASE}
   # Set Group Sticky Bit ... SGID
-  chmod -R g+s ${CORE}
+  #chmod -R g+s ${CORE}
+  chmod -R g+s ${BASE}
   DisplayLineEnd
-  #X15# DisplayLineStart "Changing permissions on ${CORE}/NOTE"
-  #X15# chmod 775 ${CORE}/NOTE
-  #X15# find ${CORE}/NOTE -type d -exec chmod 775 {} \;
-  #X15# find ${CORE}/NOTE -type f -exec chmod 444 {} \;
-  #X15# DisplayLineEnd
 fi
 
 echo ""
