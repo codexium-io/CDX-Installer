@@ -391,6 +391,7 @@ else
     echo ""
   fi
   #
+  ANSWER=""
   (( NotDone = 1 ))
   while (( NotDone ))
   do
@@ -404,14 +405,15 @@ else
     echo "[1] http/80 running on Metal"
     #echo -e "\"\e[7mHOST:80\e[0m\""
     echo "[2] http/80 running on Microsoft/WSL"
-    echo "[3|DEFAULT] https/443 running on Metal"
+    echo "[3] https/443 running on Metal"
     echo ""
     echo -n "OPTION : "
     read ANSWER
     if [[ ${ANSWER} == "1" || ${ANSWER} == "2" || ${ANSWER} == "3" ]] 
     then
       (( NotDone = 0 ))
-    else
+    elif [[ ${ANSWER} == "" ]]
+      (( NotDone = 0 ))
       ANSWER="3"
     fi
   done
