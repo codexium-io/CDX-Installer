@@ -289,6 +289,8 @@ else
     then
       cp ${CORE}/htpasswd-${AuthGroup}.txt ${BASE} 
       echo "FILE COPIED: \"htpasswd-${AuthGroup}.txt\" to ${BASE}"
+      chown apache:apache ${BASE}/htpasswd-${AuthGroup}.txt
+      echo "FILE owner set to apache:apache"
     else
       echo "FILE EXISTS: \"htpasswd-${AuthGroup}.txt\" ... [SKIPPED]"
     fi
