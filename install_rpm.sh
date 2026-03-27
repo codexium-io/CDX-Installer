@@ -551,6 +551,18 @@ else
   DisplayLineEnd
 fi
 
+
+#
+# Configure Firewall
+#
+systemctl start firewalld # Will have no effect if already running
+#
+# The following can only be set if the service is running.
+firewall-cmd --permanent --zone=public --add-service=https
+#
+systemctl restart firewalld # Reload the settings
+
+
 #
 # Last Comments
 #
