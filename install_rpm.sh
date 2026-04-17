@@ -555,6 +555,8 @@ fi
 #
 # Configure Firewall
 #
+DisplaySection "Configure Firewall"
+#
 systemctl start firewalld # Will have no effect if already running
 #
 # The following can only be set if the service is running.
