@@ -50,7 +50,7 @@ echo ""
 DisplaySection "CODEXium : Configure Environment : Libraries"
 #
 echo ""
-echo -n "INSTALL: Install system libraries ? [y]/n : "
+echo -n "INSTALL: Install system libraries ? (Hit \"n\" to skip) [y]/n : "
 read ANSWER
 if [[ ${ANSWER} == "n" ]]
 then
@@ -129,7 +129,7 @@ else
   DisplaySection "CODEXium : Configure Environment : SELinux"
   #
   echo ""
-  echo -n "INSTALL: RECOMMEND: Disable SELinux: [y]/n : " 
+  echo -n "INSTALL: RECOMMEND: Disable SELinux (Hit \"n\" to skip): [y]/n : " 
   read ANSWER
   if [[ ${ANSWER} == "n" ]]
   then
@@ -171,7 +171,7 @@ DisplayLineEnd
 echo ""
 echo "INSTALL: CODEXium License"
 echo ""
-echo -n "Do you have a license key file ? [y]/n : "
+echo -n "Do you have a license key file ? (Hit \"n\" to skip)  [y]/n : "
 read ANSWER
 if [[ ${ANSWER} == "n" ]]
 then 
@@ -222,7 +222,7 @@ else
 fi
 
 echo ""
-echo -n "INSTALL: CODEXium CORE Repo [y]/n : "
+echo -n "INSTALL: CODEXium CORE Repo (Hit \"n\" to skip) [y]/n : "
 read ANSWER 
 if [[ ${ANSWER} == "n" ]]
 then
@@ -350,7 +350,7 @@ echo ""
 DisplaySection "CODEXium : Install Software : Apache Setup"
 #
 echo ""
-echo -n "INSTALL: Setup Apache Configuration ? [y]/n : "
+echo -n "INSTALL: Setup Apache Configuration ? (Hit \"n\" to skip) [y]/n : "
 read ANSWER
 if [[ ${ANSWER} == "n" ]]
 then
@@ -376,7 +376,7 @@ else
   echo "WARNING: Generally, you should NOT copy over an existing main config."
   echo "WARNING: If this is a server that is dedicated to CODEXium, you can proceed."
   echo ""
-  echo -n "Continue ? [y]/n : "
+  echo -n "Continue ? (Hit \"n\" to skip) [y]/n : "
   read ANSWER
   if [[ ${ANSWER} == "n" ]]
   then
@@ -423,7 +423,7 @@ else
 
   if [[ ${ANSWER} == "3" ]]
   then
-    echo -n "Do you want to copy the website config \"codexium_443.conf\" ? [y]/n : "
+    echo -n "Do you want to copy the website config \"codexium_443.conf\" ? (Hit \"n\" to skip) [y]/n : "
     read ANSWER
     if [[ ${ANSWER} == "n" ]]
     then
@@ -436,7 +436,7 @@ else
       echo ""
     fi
     #
-    echo -n "Copy the website SSL certs ? [y]/n : "
+    echo -n "Copy the website SSL certs ? (Hit \"n\" to skip) [y]/n : "
     read ANSWER
     if [[ ${ANSWER} == "n" ]]
     then
@@ -454,7 +454,7 @@ else
   then
     # HOST:80 OR WSL:80
     (( OPTION_WSL = 1 ))
-    echo -n "Do you want to copy the website config \"codexium_80.conf\" ? [y]/n : "
+    echo -n "Do you want to copy the website config \"codexium_80.conf\" ? (Hit \"n\" to skip) [y]/n : "
     read ANSWER
     if [[ ${ANSWER} == "n" ]]
     then
@@ -503,7 +503,7 @@ echo -n "Do you accept the default domain ? [y]/n : "
 read ANSWER
 if [[ "${ANSWER}" == "n" ]]
 then
-  echo -n "Do you want to configuring the domain ? [y]/n : "
+  echo -n "Do you want to configuring the domain ? (Hit \"n\" to skip) [y]/n : "
   read ANSWER
   if [[ "${ANSWER}" == "n" ]]
   then
