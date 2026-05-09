@@ -200,7 +200,7 @@ else
       #echo "cp $LicenseKey /www/CODEXium-License.key"
       #echo ""
       cp $LicenseKey /www/CODEXium-License.key
-      chmod 664 /www/CODEXium-License.key
+      chmod 400 /www/CODEXium-License.key
       chown apache:apache /www/CODEXium-License.key
       if [[ -f /www/CODEXium-License.key ]]
       then
