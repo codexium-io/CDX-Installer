@@ -18,6 +18,7 @@ OS_Packages_RPM=(
   "perl-CGI"
   "perl-Inline-Files"
   "rcs"
+  "cronie"
   "lm_sensors" 
 )
 
